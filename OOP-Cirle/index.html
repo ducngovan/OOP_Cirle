@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP_Cirle</title>
+</head>
+<body>
+<div>
+    nhap ban kinh: <input type="text" id="radius" />
+    nhap mau: <input type="text" id="color" />
+    <button type="button" onclick="Cirle(radius,color)">SUBMIT</button>
+
+</div>
+
+<script>
+
+    function Cirle(radius,color) {
+        this.radius = parseInt(document.getElementById('radius').value);
+        this.color = document.getElementById('color').value;
+        this.getRadius = function () {
+            return this.radius;
+        }
+        this.getColor = function () {
+            return this.color;
+        }
+        this.getArea = function () {
+            return this.radius * this.radius *Math.PI;
+        }
+        alert("ban kinh: "+this.getRadius()+ " mau "+ this.getColor()+" dien tich: "+this.getArea());
+    }
+</script>
+</body>
+</html>
