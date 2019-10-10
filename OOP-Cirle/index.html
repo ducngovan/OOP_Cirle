@@ -8,26 +8,31 @@
 <div>
     nhap ban kinh: <input type="text" id="radius" />
     nhap mau: <input type="text" id="color" />
-    <button type="button" onclick="Cirle(radius,color)">SUBMIT</button>
+    <button type="button" onclick="getData()">SUBMIT</button>
 
 </div>
 
 <script>
-
-    function Cirle(radius,color) {
-        this.radius = parseInt(document.getElementById('radius').value);
-        this.color = document.getElementById('color').value;
-        this.getRadius = function () {
-            return this.radius;
-        }
-        this.getColor = function () {
-            return this.color;
-        }
-        this.getArea = function () {
-            return this.radius * this.radius *Math.PI;
-        }
-        alert("ban kinh: "+this.getRadius()+ " mau "+ this.getColor()+" dien tich: "+this.getArea());
+    function Cirle() {
+        this.getRadius = function (radius) {
+            return radius;
+        };
+        this.getColor = function (color) {
+            return color;
+        };
+        this.getArea = function (radius) {
+            return radius * radius *Math.PI;
+        };
     }
+    function getData() {
+        var cirle, radius, color;
+        radius = parseInt(document.getElementById('radius').value);
+        color = document.getElementById('color').value;
+        cirle = new Cirle();
+        alert(cirle.getArea(radius) + '-' + cirle.getColor(color));
+    }
+
+
 </script>
 </body>
 </html>
